@@ -8,18 +8,18 @@ sudo groupadd management
 sudo groupadd shared 
 echo "Work environment setup alongside required groups"
 echo "Creating developer users and assigning them to group 'developers'"
-sudo useradd -m -aG developers -s /bin/bash alice
-sudo useradd -m -aG developers -s /bin/bash john
-sudo useradd -m -aG developers -s /bin/bash mike
+sudo useradd -m -g developers -s /bin/bash alice
+sudo useradd -m -g developers -s /bin/bash john
+sudo useradd -m -g developers -s /bin/bash mike
 echo "Developers users created and assigned to group 'developers'" 
-sudo useradd -m -aG finance -s /bin/bash sarah
-sudo useradd -m -aG finance -s /bin/bash david
+sudo useradd -m -g finance -s /bin/bash sarah
+sudo useradd -m -g finance -s /bin/bash david
 echo "Finance users created and assigned to group 'finance'"
-sudo useradd -m -aG hr -s /bin/bash grace
-sudo useradd -m -aG hr -s /bin/bash linda
+sudo useradd -m -g hr -s /bin/bash grace
+sudo useradd -m -g hr -s /bin/bash linda
 echo "HR users created and assigned to group 'hr'"
-sudo useradd -m -aG management -s /bin/bash ceo
-sudo useradd -m -aG management -s /bin/bash manager
+sudo useradd -m -g management -s /bin/bash ceo
+sudo useradd -m -g management -s /bin/bash manager
 echo "Management users created and assigned to group 'management'"
 
 echo "Setting permissions for directories"
