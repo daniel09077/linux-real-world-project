@@ -1,15 +1,20 @@
 #!/bin/bash
 echo "Setting up work environment...."
-sleep 5
+sleep 0.5
 #sets the path to parent organization structure
-base_path="/linux-sim2-env/company"
+base_path="linux-sim2-env/company"
+echo "BASE PATH = $base_path"
+
 #-----
 #-----CREATE DEPARTMENT BLOCK
 #Array to declare the deaprtments in the organization
+
 departments=("engineering" "finance" "hr" "management" "shared")
 #Function to create the department individually
 createdeparment(){
+    echo "Creating: ${base_path}/$1"
     sudo mkdir -p "${base_path}/$1"
+
 }
 #For loop to call the create department function
 for depart in "${departments[@]}" 
@@ -19,7 +24,7 @@ done
 
 #-----
 #-----CREATE DEPARTMENT DONE
-sleep 5
+sleep 0.5
 #-----
 #-----CREATE GROUP BLOCK
 echo "Creating groups for the organization"
@@ -33,7 +38,7 @@ do
 done
 #-----
 #-----CREATE GROUP DONE
-sleep 5
+sleep 0.5
 #-----
 #-----CREATE USERS BLOCK
 echo "Creating users for the organization"
@@ -47,7 +52,7 @@ do
 done
 #-----
 #-----CREATE USERS DONE
-sleep 5
+sleep 0.5
 #-----
 #-----SET PERMISSIONS BLOCK
 echo "Setting permissions for directories"
@@ -61,7 +66,7 @@ do
 done
 #-----
 #-----CREATE DIRECTORIES AND SET PERMISSION DONE
-sleep 5
+sleep 0.5
 #-----
 #-----CREATE FILES BLOCK
 echo "Creating files in respective directories"

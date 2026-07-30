@@ -1,5 +1,5 @@
 #!/bin/bash
-base_path="linux-sim-env/company"
+base_path="linux-sim2-env/company"
 echo "Checking base path created successfully or not"
 if [ -d "$base_path" ]; then
     echo "[PASS] Base path created successfully."
