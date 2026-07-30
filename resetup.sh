@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ..
 echo "Setting up work environment...."
 sleep 0.5
 #sets the path to parent organization structure
