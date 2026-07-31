@@ -84,7 +84,7 @@ createfiles(){
 
 for d in "${!department_files[@]}"
 do 
-    for file in "${department_files[$d]}"
+    for file in ${department_files[$d]}
     do  
         createfiles "${d}" "${file}"
     done

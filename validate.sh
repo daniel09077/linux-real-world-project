@@ -34,7 +34,7 @@ for usergroup in "${!user_groups[@]}"
         for user in "${user_groups[$usergroup]}"
             do
                 if id "$user" &>/dev/null; then
-                    echo "[PASS] $user exists"
+                    echo "[PASS] ${user exists"
                 else
                     echo "[FAIL] $user does not exist"
                 fi
