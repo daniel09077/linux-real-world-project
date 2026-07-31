@@ -38,8 +38,12 @@ user_groups["management"]="ceo manager"
 createuser(){
     sudo useradd -m -g "${1}" -s /bin/bash "${2}"
 }
+creategroup(){
+    sudo groupadd "${1}"
+}
 for usergroup in "${!user_groups[@]}"
     do 
+        creategroup "${usergroup}"
         for user in "${user_groups[$usergroup]}"
         do
             createuser "${usergroup}" "${user}"
