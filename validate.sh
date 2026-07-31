@@ -1,6 +1,6 @@
 #!/bin/bash
 #--- Check path is created successfully or not
-base_path="~/linux-sim2-env/company"
+base_path="home/tempest/linux-sim2-env/company"
 echo "Checking base path created successfully or not"
 if [ -d "$base_path" ]; then
     echo "[PASS] Base path created successfully."
@@ -70,7 +70,7 @@ for department in "${!permissions[@]}"
 do
     for group in "${permissions[$department]}"
     do
-    actual_group=${stat -c -'%G' "$base_path/$department"}
+    actual_group=$(stat -c -'%G' "$base_path/$department")
     expected_group=$group
     expected_perm="2770"
     actual_perm=$(stat -c -'%a' "$base_path/$department")
