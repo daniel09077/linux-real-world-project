@@ -44,13 +44,14 @@ creategroup(){
 for usergroup in "${!user_groups[@]}"
     do 
         creategroup "${usergroup}"
-        for user in "${user_groups[$usergroup]}"
+        for user in ${user_groups[$usergroup]}
         do
             createuser "${usergroup}" "${user}"
         done
     done
 
 shared_users=("alice" "john" "mike" "sarah" "david" "grace" "linda" "ceo" "manager")  
+sudo groupadd shared
 for s in "${shared_users[@]}"
 do
     sudo usermod -aG shared "$s" 
