@@ -61,14 +61,20 @@ done
 sleep 0.5
 #-----
 #-----SET PERMISSIONS BLOCK
+declare -A permissions
+permissions["engineering"]="developers"
+permissions["finance"]="finance"
+permissions["hr"]="hr"
+permissions["management"]="management"
+permissions["shared"]="shared"
 echo "Setting permissions for directories"
 createperm(){
     sudo chown -R :"${1}" "${2}/${3}" && sudo chmod -R 2770 "${2}/${3}"
 }
 
-for index in "${!groups[@]}"
+for index in "${!permissions[@]}"
 do 
-    createperm "${groups[${index}]}" "${base_path}" "${departments[${index}]}"
+    createperm "${permissions[${index}]}" "${base_path}" "${index}"
 done
 #-----
 #-----CREATE DIRECTORIES AND SET PERMISSION DONE
