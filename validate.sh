@@ -29,7 +29,7 @@ user_groups["finance"]="sarah david"
 user_groups["hr"]="grace linda"  
 user_groups["management"]="ceo manager"
 secgroup="shared"
-for user in "${user_groups[@]}"
+for user in ${user_groups[@]}
 do 
     if id -nG "$user" | grep -qw "$secgroup"; then
         echo "[PASS] $user is a member of $secgroup group."
