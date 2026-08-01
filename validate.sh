@@ -68,16 +68,14 @@ permissions["shared"]="shared"
 
 for department in "${!permissions[@]}"
 do
-    for group in "${permissions[$department]}"
-    do
     actual_group=$(stat -c '%G' "$base_path/$department")
-    expected_group=$group
+    expected_group=${permissions[$department]}
     expected_perm="2770"
     actual_perm=$(stat -c '%a' "$base_path/$department")
-    if [ "actual_group" == "expected_group" ] && [ "$actual_perm" == "$expected_perm" ]; then
+    if [ "$actual_group" == "$expected_group" ] && [ "$actual_perm" == "$expected_perm" ]; then
         echo "[PASS] $department has correct group ownership and permissions."
     else
         echo "[FAIL] $department does not have correct group ownership or permissions."
     fi
-    done
+   
 done
