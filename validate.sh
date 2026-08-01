@@ -1,6 +1,6 @@
 #!/bin/bash
 #--- Check path is created successfully or not
-base_path="home/tempest/linux-sim2-env/company"
+base_path="/home/tempest/linux-sim2-env/company"
 echo "Checking base path created successfully or not"
 if [ -d "$base_path" ]; then
     echo "[PASS] Base path created successfully."
